@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Nosotros - Colegio José Domingo de Santistevan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --azul: #003366;
+            --naranja: #f57c00;
+            --blanco: #ffffff;
+            --gris-claro: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--gris-claro);
+            color: var(--azul);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+            background: linear-gradient(to right, var(--azul), #002244);
+            color: var(--blanco);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        header img {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        header .titulo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header .titulo h1 {
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        header .titulo p {
+            font-size: 1em;
+            color: #dddddd;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(245, 124, 0, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links li a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #ffe0b2;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                background-color: rgba(245, 124, 0, 0.95);
+                width: 100%;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                padding: 20px 0;
+                display: none;
+            }
+
+            #menu-toggle:checked + .menu-icon + .nav-links {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        .content-section {
+            max-width: 1100px;
+            margin: 40px auto;
+            background-color: var(--blanco);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .content-section h2 {
+            font-size: 2.2em;
+            color: var(--azul);
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--naranja);
+            border-radius: 2px;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .content-section ul li {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: #333;
+        }
+
+        .content-section ul li::before {
+            content: '✓';
+            color: var(--naranja);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: var(--azul);
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Logo del Colegio">
+        <div class="titulo">
+            <h1>Colegio José Domingo de Santistevan</h1>
+            <p>Un legado que permanece</p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Santistevan</div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="nav-links">
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="oferta.html">Oferta Académica</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="content-section">
+            <h2>Sobre Nuestro Colegio</h2>
+            <p>El Colegio José Domingo de Santistevan es una institución educativa con una trayectoria de más de 50 años formando líderes y ciudadanos comprometidos con el desarrollo de nuestro país. Desde nuestra fundación, nos hemos dedicado a ofrecer una educación de calidad, integral y basada en valores.</p>
+
+            <img src="alaberga.jpg" alt="Foto histórica del colegio">
+
+            <h3>Nuestra Misión</h3>
+            <p>Formar estudiantes críticos, creativos y responsables, capaces de enfrentar los desafíos del futuro y contribuir positivamente a la sociedad, a través de una educación innovadora y centrada en el desarrollo de sus talentos.</p>
+
+            <h3>Nuestra Visión</h3>
+            <p>Ser un referente educativo a nivel nacional, reconocido por nuestra excelencia académica, el ambiente de aprendizaje inspirador y el impacto positivo de nuestros egresados en sus comunidades.</p>
+
+            <h3>Valores Institucionales</h3>
+            <ul>
+                <li>Respeto y Solidaridad</li>
+                <li>Excelencia y Compromiso</li>
+                <li>Innovación y Creatividad</li>
+                <li>Integridad y Responsabilidad Social</li>
+            </ul>
+
+            <p>Invitamos a padres de familia y estudiantes a conocer más de nuestra propuesta educativa y ser parte de la familia Santistevan.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Colegio José Domingo de Santistevan. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
